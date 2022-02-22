@@ -5,10 +5,11 @@ public class Combine2Strings {
 	static String b = "abcdcefgh";
 	static String a = "1234";
 	static StringBuilder newpass = new StringBuilder();
+	
+	/*merge the 2 strings picking a character at a time from each string*/
 
 	public static void main(String[] args) {
 		String maxStr = "";
-		// System.out.println(combined);
 		
 		if (a.length() > b.length()) {
 			maxStr = a;
