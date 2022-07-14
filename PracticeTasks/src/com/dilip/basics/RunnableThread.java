@@ -1,6 +1,5 @@
 package com.dilip.basics;
 
-import com.pattern.singleton.SingleClass;
 
 public class RunnableThread implements Runnable{
 

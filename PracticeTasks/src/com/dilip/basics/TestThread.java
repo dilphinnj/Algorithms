@@ -1,7 +1,5 @@
 package com.dilip.basics;
 
-import com.pattern.singleton.SingleClass;
-
 public class TestThread extends Thread {
 	public void run() {	
 		SingleClass sobj = SingleClass.getSingleObj();
