@@ -1,4 +1,4 @@
-package com.sample.basics;
+package com.dilip.basics;
 
 public class MyAniClass implements MyInterf{
 

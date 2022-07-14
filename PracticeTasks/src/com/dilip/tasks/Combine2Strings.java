@@ -1,4 +1,4 @@
-package com.sample.tasks;
+package com.dilip.tasks;
 
 public class Combine2Strings {
 
