@@ -1,4 +1,4 @@
-package com.dilip.tasks;
+package com.dilip.challenges;
 
 import java.io.*;
 import java.math.*;

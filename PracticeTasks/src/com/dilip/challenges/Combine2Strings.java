@@ -1,4 +1,4 @@
-package com.dilip.tasks;
+package com.dilip.challenges;
 
 public class Combine2Strings {
 
