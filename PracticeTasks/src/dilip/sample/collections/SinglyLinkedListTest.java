@@ -158,7 +158,6 @@ public class SinglyLinkedListTest {
         System.out.println();
 
         printSinglyLinkedList(llist_head, " ");
-        System.out.println();
 
         scanner.close();
     }
