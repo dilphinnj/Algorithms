@@ -80,31 +80,70 @@ public class DoublyLinkedListTest {
 	public static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode llistHead, int data) {
 
 		DoublyLinkedList dl = new DoublyLinkedList();
-		DoublyLinkedListNode headNode;
+		DoublyLinkedListNode headNode;	
 		DoublyLinkedListNode currNode;
 
 		DoublyLinkedListNode insNode = new DoublyLinkedListNode(data);
-
+		
+		
 		insNode.next = llistHead;
 		llistHead.prev = insNode;
 		dl.head = insNode;
-
+	//	dl.insertNode(data);
+		
 		currNode = dl.head;
-
-		while (currNode != null) {
-			System.out.println("currNode.data =>" + currNode.data);
-			while (currNode.prev != null && currNode.prev.data > currNode.data) {
-				DoublyLinkedListNode tempNode = new DoublyLinkedListNode(currNode.data);
-				currNode.data = currNode.prev.data;
-				currNode.prev.data = tempNode.data;
-				currNode = currNode.prev;
+				
+		
+			while(currNode != null) {
+			//	System.out.println("currNode.data =>" + currNode.data);	
+				if(currNode.prev != null && currNode.prev.data > currNode.data) {
+					while(currNode.prev != null && currNode.prev.data > currNode.data) {
+						DoublyLinkedListNode tempNode = new DoublyLinkedListNode(currNode.data);
+						currNode.data = currNode.prev.data ;
+						currNode.prev.data = tempNode.data ;
+						currNode = currNode.prev;
+					}
+					// headNode = currNode;					
+				}	
+			//	System.out.println("sorted currNode.data =>" + currNode.data);	
+				currNode = currNode.next;
+			
 			}
-			currNode = currNode.next;
-
+			
+		return dl.head;	
+}
+	
+	public static DoublyLinkedListNode reverseList(DoublyLinkedListNode llistHead) {
+		
+		DoublyLinkedList dl = new DoublyLinkedList();
+		dl.tail = llistHead;
+		
+	//    DoublyLinkedListNode tailNode = new DoublyLinkedListNode(dl.tail.data);
+		DoublyLinkedListNode curr = llistHead;
+		DoublyLinkedListNode tl = new DoublyLinkedListNode(curr.data);
+		
+		// System.out.println("testing revers tail =>"+curr.data);
+		
+		DoublyLinkedListNode next = null;
+		DoublyLinkedListNode prev = null;
+		
+		DoublyLinkedListNode node = null;
+		
+		while(curr != null) {
+			System.out.println("curr =>"+curr.data);
+			
+			node = curr;
+			
+			next  = curr.next;
+			curr.next = prev;
+			prev = curr;
+			
+			curr = next;
 		}
-
+		
+		dl.head = prev;
 		return dl.head;
-
+		
 	}
 
 	private static final Scanner scanner = new Scanner(System.in);
@@ -145,8 +184,10 @@ public class DoublyLinkedListTest {
 			scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
 			DoublyLinkedListNode llist1 = sortedInsert(llist.head, data);
+			DoublyLinkedListNode llist2 = reverseList(llist1);
 
-			printDoublyLinkedList(llist1, " ");
+			 printDoublyLinkedList(llist1, " ");
+			 printDoublyLinkedList(llist2, " ");
 			// bufferedWriter.newLine();
 		}
 
